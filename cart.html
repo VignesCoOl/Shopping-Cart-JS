@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <title>
         Shopping Cart
@@ -12,9 +11,12 @@
             width: 159px;
             height: 318px;
         }
+        button{
+            text-transform: uppercase;
+            font-size: medium;
+        }
     </style>
 </head>
-
 <body>
     <div class="nav">
         <input type="checkbox" id="nav-check">
@@ -24,26 +26,42 @@
             </div>
         </div>
         <div class="nav-links">
-            <a href="#" target="_blank">CART</a>
-            <a href="#" target="_blank">HOME</a>
+            <a href="#">CART</a>
+            <a href="#">HOME</a>
         </div>
     </div>
     <ul class="flex-container">
         <div class="flex-item">
-            <img src="samsung.jpg">
+            <img src="samsung.jpg"/>
+            <h3>Samsung</h3>
+            <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
-            <img src="oneplus.jpg">
+            <img src="oneplus.jpg"/>
+            <h3>OnePlus</h3>
+            <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
-            <img src="vivo.jpg">
+            <img src="vivo.jpg"/>
+            <h3>Vivo</h3>
+            <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
-            <img src="samsung.jpg">
+            <img src="samsung.jpg"/>
+            <h3>Samsung</h3>
+            <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
-            <img src="oneplus.jpg">
+            <img src="oneplus.jpg"/>
+            <h3>OnePlus</h3>
+            <button class="add2cart">Add to Cart</button>
         </div>
     </ul>
+    <script>
+        var carts = document.querySelectorAll("add2cart");
+        for(let i=0;i<carts.length;i++){
+            console.log(i);
+        }
+    </script>
 </body>
 </html>
