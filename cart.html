@@ -37,26 +37,31 @@
         <div class="flex-item">
             <img src="samsung.jpg" />
             <h3>Samsung</h3>
+            <h3>15,700</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
             <img src="oneplus.jpg" />
             <h3>OnePlus</h3>
+            <h3>39,900</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
             <img src="vivo.jpg" />
             <h3>Vivo</h3>
+            <h3>18,600</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
             <img src="samsung.jpg" />
             <h3>Samsung</h3>
+            <h3>25,000</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
             <img src="oneplus.jpg" />
             <h3>OnePlus</h3>
+            <h3>39,900</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
     </ul>
@@ -65,32 +70,38 @@
             {
                 name: 'Samsung',
                 tag: 'Mobile',
-                price: 5000,
+                price: 15700,
                 inCart: 0
             },
             {
                 name: 'OnePlus',
                 tag: 'mobile',
-                price: 6000,
+                price: 39900,
                 inCart: 0
             },
             {
                 name: 'Vivo',
                 tag: 'mobile',
-                price: 7000,
+                price: 18600,
                 inCart: 0
             },
             {
                 name: 'Samsung',
                 tag: 'Mobile',
-                price: 5000,
+                price: 25000,
+                inCart: 0
+            },       {
+                name: 'OnePlus',
+                tag: 'mobile',
+                price: 39900,
                 inCart: 0
             }
         ]
         var carts = document.querySelectorAll(".add2cart");
         for (let i = 0; i < carts.length; i++) {
             carts[i].addEventListener('click', () => {
-                cartNumbers();
+                cartNumbers(products[i]);
+                alert("Product Added to cart");
             })
         }
         function onLoadCart(){
@@ -99,7 +110,8 @@
                 document.querySelector(".cart span").textContent= productnums;
             }
         }
-        function cartNumbers() {
+        function cartNumbers(product) {
+            console.log("The product clicked is", product);
             let productnums = localStorage.getItem("cartnumbers");
             productnums = parseInt(productnums);
             if (productnums) {
@@ -110,6 +122,11 @@
                 localStorage.setItem("cartnumbers", 1);
                 document.querySelector(".cart span").textContent=1;
             }
+            setItems(product);
+        }
+        function setItems(product){
+            console.log("Products");
+            console.log("My product is", product);
         }
         onLoadCart();
     </script>
