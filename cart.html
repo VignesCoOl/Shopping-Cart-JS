@@ -111,7 +111,6 @@
             }
         }
         function cartNumbers(product) {
-            console.log("The product clicked is", product);
             let productnums = localStorage.getItem("cartnumbers");
             productnums = parseInt(productnums);
             if (productnums) {
@@ -125,8 +124,12 @@
             setItems(product);
         }
         function setItems(product){
-            console.log("Products");
-            console.log("My product is", product);
+            let cartItems = localStorage.getItem("productsIncart");
+            //console.log("My product is", product);
+            console.log("Cart Items:", cartItems);
+            product.inCart = 1;
+            cartItems={[product.tag]:product}
+            localStorage.setItem("productsIncart", JSON.stringify(cartItems));
         }
         onLoadCart();
     </script>
