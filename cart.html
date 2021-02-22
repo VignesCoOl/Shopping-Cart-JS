@@ -75,8 +75,8 @@
     <script>
         let products = [
             {
-                name: 'Samsung',
-                tag: 'Mobile',
+                name: 'Samsung X',
+                tag: 'mobile',
                 price: 15700,
                 inCart: 0
             },
@@ -94,7 +94,7 @@
             },
             {
                 name: 'Samsung',
-                tag: 'Mobile',
+                tag: 'mobile',
                 price: 25000,
                 inCart: 0
             },       {
@@ -136,9 +136,10 @@
             if(cartItems != null){
                 cartItems[product.tag].inCart += 1;
             }
-            console.log("Cart Items:", cartItems);
-            product.inCart = 1;
-            cartItems={[product.tag]:product}
+            else{
+                product.inCart = 1;
+                cartItems={[product.tag]:product}
+            }
             localStorage.setItem("productsIncart", JSON.stringify(cartItems));
         }
         onLoadCart();
