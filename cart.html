@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <title>
         Shopping Cart
@@ -11,12 +12,14 @@
             width: 159px;
             height: 318px;
         }
-        button{
+
+        button {
             text-transform: uppercase;
             font-size: medium;
         }
     </style>
 </head>
+
 <body>
     <div class="nav">
         <input type="checkbox" id="nav-check">
@@ -26,43 +29,80 @@
             </div>
         </div>
         <div class="nav-links">
-            <a href="#">CART (0)</a>
+            <a href="#" class="cart">CART <span>0</span></a>
             <a href="#">HOME</a>
         </div>
     </div>
     <ul class="flex-container">
         <div class="flex-item">
-            <img src="samsung.jpg"/>
+            <img src="samsung.jpg" />
             <h3>Samsung</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
-            <img src="oneplus.jpg"/>
+            <img src="oneplus.jpg" />
             <h3>OnePlus</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
-            <img src="vivo.jpg"/>
+            <img src="vivo.jpg" />
             <h3>Vivo</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
-            <img src="samsung.jpg"/>
+            <img src="samsung.jpg" />
             <h3>Samsung</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
         <div class="flex-item">
-            <img src="oneplus.jpg"/>
+            <img src="oneplus.jpg" />
             <h3>OnePlus</h3>
             <button class="add2cart">Add to Cart</button>
         </div>
     </ul>
     <script>
+        let products = [
+            {
+                name: 'Samsung',
+                tag: 'Mobile',
+                price: 5000,
+                inCart: 0
+            },
+            {
+                name: '',
+                tag: '',
+                price: 5000,
+                inCart: 0
+            },
+            {
+                name: '',
+                tag: '',
+                price: 5000,
+                inCart: 0
+            },
+            {
+                name: '',
+                tag: '',
+                price: 5000,
+                inCart: 0
+            }
+        ]
         var carts = document.querySelectorAll(".add2cart");
-        for(let i=0; i<carts.length; i++){
-            carts[i].addEventListener('click',()=>{
-                alert("Added to cart")
+        for (let i = 0; i < carts.length; i++) {
+            carts[i].addEventListener('click', () => {
+                cartNumbers();
             })
+        }
+        function cartNumbers() {
+            let productnums = localStorage.getItem("cartnumbers");
+            productnums = parseInt(productnums);
+            if (productnums) {
+                localStorage.setItem("cartnumbers", productnums + 1);
+            }
+            else {
+                localStorage.setItem("cartnumbers", 1);
+                document.querySelector(".cart span").textContent=1;
+            }
         }
     </script>
 </body>
