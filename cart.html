@@ -16,6 +16,15 @@
         button {
             text-transform: uppercase;
             font-size: medium;
+            padding: 10px;
+            color: darkblue;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -125,7 +134,11 @@
         }
         function setItems(product){
             let cartItems = localStorage.getItem("productsIncart");
+            cartItems = JSON.parse(cartItems);
             //console.log("My product is", product);
+            if(cartItems != null){
+                
+            }
             console.log("Cart Items:", cartItems);
             product.inCart = 1;
             cartItems={[product.tag]:product}
