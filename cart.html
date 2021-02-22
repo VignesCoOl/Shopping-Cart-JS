@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="nav-links">
-            <a href="#">CART</a>
+            <a href="#">CART (0)</a>
             <a href="#">HOME</a>
         </div>
     </div>
@@ -58,9 +58,11 @@
         </div>
     </ul>
     <script>
-        var carts = document.querySelectorAll("add2cart");
-        for(let i=0;i<carts.length;i++){
-            console.log(i);
+        var carts = document.querySelectorAll(".add2cart");
+        for(let i=0; i<carts.length; i++){
+            carts[i].addEventListener('click',()=>{
+                alert("Added to cart")
+            })
         }
     </script>
 </body>
