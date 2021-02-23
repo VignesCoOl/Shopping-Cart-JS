@@ -1,1 +1,1 @@
-#Shopping Cart App Using JavaScript
+#Shopping Cart App Using HTML, CSS & JavaScript.
