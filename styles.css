@@ -98,33 +98,5 @@
     margin-top: 10px;
     text-align: center;
   }
-  .product-container{
-    margin-top: 40px;
-    justify-content: space-around;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  .product-header{
-    display: flex;
-    border-bottom: 1px solid yellowgreen;
-  }
-  .product-name{
-    width: 25%;
-    display: flex;
-    align-items: center;
-  }
-  .price{
-    width: 25%;
-    display: flex;
-    align-items: center;
-  }
-  .quantity{
-    width: 25%;
-    display: flex;
-    align-items: center;
-  }
-  .total{
-    width: 25%;
-    display: flex;
-    align-items: center;
-  }
+
+  

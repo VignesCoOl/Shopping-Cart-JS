@@ -1,30 +1,30 @@
 let products = [
     {
         name: 'Samsung X',
-        tag: 'mobile',
-        price: 15700,
+        tag: 'samsung',
+        price: 25000,
         inCart: 0
     },
     {
         name: 'OnePlus',
-        tag: 'mobile',
+        tag: 'oneplus',
         price: 39900,
         inCart: 0
     },
     {
         name: 'Vivo',
-        tag: 'mobile',
+        tag: 'vivo',
         price: 18600,
         inCart: 0
     },
     {
         name: 'Samsung',
-        tag: 'mobile',
+        tag: 'samsung',
         price: 25000,
         inCart: 0
     }, {
         name: 'OnePlus',
-        tag: 'mobile',
+        tag: 'oneplus',
         price: 39900,
         inCart: 0
     }
@@ -86,22 +86,27 @@ function setItems(product) {
     localStorage.setItem("productsIncart", JSON.stringify(cartItems));
 }
 function displayCart() {
-let cartItems = localStorage.getItem("productsIncart");
-cartItems = JSON.parse(cartItems);
-let productcon = document.querySelector(".product-container");
-if(cartItems && productcon){
-productcon.innerHTML = "";
-Object.values(cartItems).map(item =>{
-productcon.innerHTML += <div class="product">
+    let cartItems = localStorage.getItem("productsIncart");
+    cartItems = JSON.parse(cartItems);
+    let productcon = document.querySelector(".products");
+    if (cartItems && productcon) {
+        productcon.innerHTML = '';
+        Object.values(cartItems).map(item => {
+        /*    productcon.innerHTML += `<div class="product-container">
 <img src="${item.tag}.jpg"></img>
 <span>${item.name}</span>
 </div>
-
-
-})
+<ion-icon name="close-circle-outline"></ion-icon>
+<div class="price">${item.price}</div>
+<ion-icon name="remove-circle-outline"></ion-icon><div class="quantity">${item.inCart}</div><ion-icon name="add-circle-outline"></ion-icon>
+<div class="total">${item.inCart * item.price} RS</div>
+ `;*/
+ productcon.innerHTML += `<table><tr><th>Image</th><th>Brand</th><th>Price</th><th>Quantity</th><th>Total</th></tr>
+ <tr><td><ion-icon name="close-circle-outline"></ion-icon><img src="${item.tag}.jpg"></img></td><td><span>${item.name}</span></td><td><div class="price">${item.price}</div></td><td><ion-icon name="remove-circle-outline"></ion-icon>${item.inCart}<ion-icon name="add-circle-outline"></ion-icon></td><td>${item.inCart * item.price} </td></tr>
+ </table>
+ `;
+        });
+    }
 }
-
-}
-
 onLoadCart();
 displayCart();
