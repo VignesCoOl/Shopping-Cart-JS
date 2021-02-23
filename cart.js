@@ -111,5 +111,9 @@ function displayCart() {
  `;
     }
 }
+function comingSoon(){
+    confirm("Coming soon");
+}
+
 onLoadCart();
 displayCart();
