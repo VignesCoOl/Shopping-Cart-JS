@@ -1,4 +1,4 @@
-# Shopping Cart App Using HTML, CSS & JavaScript.
+# Shopping Cart App Using HTML, CSS & JavaScript with LocalStorage.
 
 ## Sreenshots
 
