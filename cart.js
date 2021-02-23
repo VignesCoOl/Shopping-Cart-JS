@@ -102,12 +102,12 @@ function displayCart() {
 <ion-icon name="remove-circle-outline"></ion-icon><div class="quantity">${item.inCart}</div><ion-icon name="add-circle-outline"></ion-icon>
 <div class="total">${item.inCart * item.price} RS</div>
  `;*/
- productcon.innerHTML += `<table><tr><th>Image</th><th>Brand</th><th>Price</th><th>Quantity</th><th>Total</th></tr>
+ productcon.innerHTML += `<table class="tab1"><tr><th>Image</th><th>Brand</th><th>Price</th><th>Quantity</th><th>Total</th></tr>
  <tr><td><ion-icon name="close-circle-outline"></ion-icon><img src="${item.tag}.jpg"></img></td><td><span>${item.name}</span></td><td><div class="price">${item.price}</div></td><td><ion-icon name="remove-circle-outline"></ion-icon>${item.inCart}<ion-icon name="add-circle-outline"></ion-icon></td><td>${item.inCart * item.price} </td></tr>
  </table>
  `;
         });
- productcon.innerHTML += `<table><tr><th>Total Cost : </th><th class="ct">${carttotal} </th></tr></table>
+ productcon.innerHTML += `<table class="tab2"><tr><th>Total Cost : </th><th>Payment</th><tr/><tr><th class="ct">${carttotal} </th><th><a href="https://www.bharatupi.com" type="button">Pay Online</a></th></tr></table>
  `;
     }
 }
