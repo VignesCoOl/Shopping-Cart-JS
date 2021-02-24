@@ -103,7 +103,7 @@ function displayCart() {
     <div class="total">${item.inCart * item.price} RS</div>
      `;*/
             productcon.innerHTML += `<table class="tab1"><tr><th>Image</th><th>Brand</th><th>Price</th><th>Quantity</th><th>Total</th></tr>
- <tr><td><ion-icon name="close-circle-outline"></ion-icon><img src="${item.tag}.jpg"></img></td><td><span>${item.name}</span></td><td><div class="price">${item.price}</div></td><td><ion-icon name="remove-circle-outline"></ion-icon>${item.inCart}<ion-icon name="add-circle-outline"></ion-icon></td><td>${item.inCart * item.price} </td></tr>
+ <tr><td><img src="${item.tag}.jpg"></img></td><td><span>${item.name}</span></td><td><div class="price">${item.price}</div></td><td><ion-icon name="remove-circle-outline"></ion-icon>${item.inCart}<ion-icon name="add-circle-outline"></ion-icon></td><td>${item.inCart * item.price} </td></tr>
  </table>
  `;
         });
@@ -113,6 +113,12 @@ function displayCart() {
 }
 function comingSoon() {
     confirm("Coming soon");
+}
+function removeCart(){
+    localStorage.removeItem("productsIncart");
+    localStorage.removeItem("total");
+    localStorage.removeItem("cartnumbers")
+    location.reload();
 }
 onLoadCart();
 displayCart();
